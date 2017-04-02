@@ -15,11 +15,17 @@
 // NOTICE: Disabling ServiceWorkers breaks functionality on some sites (Google Street View...)
 // Unknown security implications
 // CVE-2016-5259, CVE-2016-2812, CVE-2016-1949, CVE-2016-5287 (fixed)
-user_pref("dom.serviceWorkers.enabled",				false);
+//user_pref("dom.serviceWorkers.enabled",				false);
 
-// PREF: Disable web notifications
+// PREF: Disable Web Workers
+// https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+// https://www.w3schools.com/html/html5_webworkers.asp
+// NOTICE: Disabling Web Workers breaks "Download as ZIP" functionality on https://mega.nz/, WhatsApp Web, upload on https://www.virustotal.com/,  and probably others
+user_pref("dom.workers.enabled",					false);
+
+// PREF: Disable web notifications (disabled)
 // https://support.mozilla.org/en-US/questions/1140439
-user_pref("dom.webnotifications.enabled",			false);
+//user_pref("dom.webnotifications.enabled",			false);
 
 // PREF: Disable DOM timing API
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
@@ -765,11 +771,12 @@ user_pref("browser.cache.offline.enable",			false);
 // NOTICE: Clearing open windows on Firefox exit causes 2 windows to open when Firefox starts https://bugzilla.mozilla.org/show_bug.cgi?id=1334945
 user_pref("privacy.sanitize.sanitizeOnShutdown",		true);
 user_pref("privacy.clearOnShutdown.cache",			true);
-user_pref("privacy.clearOnShutdown.cookies",			true);
+//user_pref("privacy.clearOnShutdown.cookies",			true);
 user_pref("privacy.clearOnShutdown.downloads",			true);
 user_pref("privacy.clearOnShutdown.formdata",			true);
 user_pref("privacy.clearOnShutdown.history",			true);
 user_pref("privacy.clearOnShutdown.offlineApps",		true);
+//user_pref("privacy.clearOnShutdown.passwords",			true);
 user_pref("privacy.clearOnShutdown.sessions",			true);
 user_pref("privacy.clearOnShutdown.openWindows",		true);
 
@@ -937,6 +944,12 @@ user_pref("network.IDN_show_punycode",				true);
 user_pref("browser.urlbar.autoFill",				false);
 user_pref("browser.urlbar.autoFill.typed",			false);
 
+// PREF: Don't suggest any URLs while typing at the address bar
+// https://www.labnol.org/software/browsers/prevent-firefox-showing-bookmarks-address-location-bar/3636/
+// http://kb.mozillazine.org/Browser.urlbar.maxRichResults
+// "Setting the preference to 0 effectively disables the Location Bar dropdown entirely."
+//user_pref("browser.urlbar.maxRichResults",			0);
+
 // PREF: Disable CSS :visited selectors
 // https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/
 // https://dbaron.org/mozilla/visited-privacy
@@ -944,7 +957,7 @@ user_pref("layout.css.visited_links_enabled",			false);
 
 // PREF: Disable URL bar autocomplete and history/bookmarks suggestions dropdown
 // http://kb.mozillazine.org/Disabling_autocomplete_-_Firefox#Firefox_3.5
-user_pref("browser.urlbar.autocomplete.enabled",		false);
+//user_pref("browser.urlbar.autocomplete.enabled",		false);
 
 // PREF: Do not check if Firefox is the default browser
 user_pref("browser.shell.checkDefaultBrowser",			false);
