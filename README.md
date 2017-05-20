@@ -288,6 +288,8 @@ HTTP protocol related entries. This affects cookies, the user agent, referer and
 
 Enable and configure private browsing mode, don't store information locally during the browsing session
 * Permanently enable private browsing mode [ [1](https://support.mozilla.org/en-US/kb/Private-Browsing) [2](https://wiki.mozilla.org/PrivateBrowsing) ]
+* Do not store POST data in saved sessions [ [1](http://kb.mozillazine.org/Browser.sessionstore.postdata) ]
+* Disable the Session Restore service [ [1](http://kb.mozillazine.org/Browser.sessionstore.enabled) ]
 * Do not download URLs for the offline cache [ [1](http://kb.mozillazine.org/Browser.cache.offline.enable) ]
 * Clear history when Firefox closes [ [1](https://support.mozilla.org/en-US/kb/Clear%20Recent%20History#w_how-do-i-make-firefox-clear-my-history-automatically) ]
 * Set time range to "Everything" as default in "Clear Recent History"
@@ -298,7 +300,7 @@ Enable and configure private browsing mode, don't store information locally duri
 * Disable download history
 * Disable password manager
 * Disable form autofill, don't save information entered in web page forms and the Search Bar
-* Cookies expires at the end of the session (when the browser closes) [ [1](http://kb.mozillazine.org/Network.cookie.lifetimePolicy#2) ]
+* The cookie's lifetime is supplied by the server
 * Require manual intervention to autofill known username/passwords sign-in forms [ [1](http://kb.mozillazine.org/Signon.autofillForms) [2](https://www.torproject.org/projects/torbrowser/design/#identifier-linkability) ]
 * Disable formless login capture [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=1166947) ]
 * When username/password autofill is enabled, still disable it on non-HTTPS sites [ [1](https://hg.mozilla.org/integration/mozilla-inbound/rev/f0d146fe7317) ]
