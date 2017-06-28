@@ -160,8 +160,6 @@ HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / [DOM](https://en.wikipedia.org
 * Disable battery API (Firefox < 52) [ [1](https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1313580) ]
 * Disable telephony API [ [1](https://wiki.mozilla.org/WebAPI/Security/WebTelephony) ]
 * Disable "beacon" asynchronous HTTP transfers (used for analytics) [ [1](https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon) ]
-* Disable clipboard event detection (onCut/onCopy/onPaste) via Javascript
-* Disable "copy to clipboard" functionality via Javascript (Firefox >= 41)
 * Disable speech recognition [ [1](https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html) [2](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition) [3](https://wiki.mozilla.org/HTML5_Speech_API) ]
 * Disable speech synthesis [ [1](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis) ]
 * Disable sensor API [ [1](https://wiki.mozilla.org/Sensor_API) ]
@@ -297,7 +295,6 @@ Enable and configure private browsing mode, don't store information locally duri
 * Disable disk cache [ [1](http://kb.mozillazine.org/Browser.cache.disk.enable) ]
 * Disable Caching of SSL Pages
 * Disable download history
-* Disable password manager
 * Disable form autofill, don't save information entered in web page forms and the Search Bar
 * The cookie's lifetime is supplied by the server
 * Require manual intervention to autofill known username/passwords sign-in forms [ [1](http://kb.mozillazine.org/Signon.autofillForms) [2](https://www.torproject.org/projects/torbrowser/design/#identifier-linkability) ]
@@ -441,6 +438,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 * Installing user.js will remove your browsing history, caches and local storage.
 * Installing user.js **will remove your saved passwords** (https://github.com/pyllyukko/user.js/issues/27)
 * Clearing open windows on Firefox exit causes 2 windows to open when Firefox starts https://bugzilla.mozilla.org/show_bug.cgi?id=1334945
+* Make sure to set a Master password to protect Firefox's password storage against basic malware that could extract your password information
 * .URL shortcut files will be created with a generic icon
 * OCSP leaks your IP and domains you visit to the CA when OCSP Stapling is not available on visited host
 * OCSP is vulnerable to replay attacks when nonce is not configured on the OCSP responder
