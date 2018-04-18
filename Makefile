@@ -59,11 +59,12 @@ FIREFOX_SOURCE_PREFS= \
 	https://hg.mozilla.org/mozilla-central/raw-file/tip/devtools/client/webide/preferences/webide.js \
 	https://hg.mozilla.org/mozilla-central/raw-file/tip/browser/app/profile/channel-prefs.js
 sourceprefs.js:
-	@for SOURCEFILE in $(FIREFOX_SOURCE_PREFS); do wget -nv "$$SOURCEFILE" -O - ; done | egrep "(^pref|^user_pref)" | sort --unique >| $@
+	@for SOURCEFILE in $(FIREFOX_SOURCE_PREFS); do curl "$$SOURCEFILE" ; done | egrep "(^pref|^user_pref)" | sort --unique >| $@
 
 TBBBRANCH=tor-browser-60.3.0esr-8.5-1
 000-tor-browser.js:
 	wget -nv "https://gitweb.torproject.org/tor-browser.git/plain/browser/app/profile/firefox.js?h=$(TBBBRANCH)" -O $@
+	curl "https://gitweb.torproject.org/tor-browser.git/plain/browser/app/profile/firefox.js?h=$(TBBBRANCH)" -o $@
 
 regex = ^\(user_\)\?pref/s/^.*pref("\([^"]\+\)",\s*\([^)]\+\).*$$
 .PHONY: tbb-diff
